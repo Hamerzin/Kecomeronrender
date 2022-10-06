@@ -1,0 +1,4 @@
+dipa/
+.env
+db.sqlite3
+
