@@ -9,8 +9,8 @@ class Ingredients(models.Model):
     dishe_4= models.CharField(max_length=255, blank=True, null=True)
     dishe_5= models.CharField(max_length=255, blank=True, null=True)
 
-   # def __str__(self):
-    #    return f"ingrediente-> {self.dishe_1}"
+    def __str__(self):
+        return f"ingrediente-> {self.dishe_1}"
     class Meta:
         verbose_name = 'Ingrediente'
         verbose_name_plural = 'ingredientes'
@@ -37,7 +37,7 @@ class RecipesModel(models.Model):
     number_of_dishes=models.IntegerField()
     timeday= models.CharField(max_length=12,choices=time_choice, null=True, blank=True)
     recipes_time=models.IntegerField()
-    ingredients=models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    ingredients=models.ManyToManyField(Ingredients)
     like=models.IntegerField(default=0, null=True, blank=True)
     description=models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
