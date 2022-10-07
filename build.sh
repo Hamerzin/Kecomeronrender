@@ -3,7 +3,7 @@
 set -o errexit
 
 pip install -r requirements.txt
-python manage.py makemigrations
+python manage.py makemigrations --merge
 python manage.py collectstatic --no-input
 python manage.py migrate
 #esto crea un super usuario la primera vez en render
