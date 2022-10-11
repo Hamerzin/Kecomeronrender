@@ -52,6 +52,7 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'corsheaders',
     'rest_framework',
     'djoser',
     'drf_yasg',
@@ -68,6 +69,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+# permisoss para consumo de api
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3030',
+    'http://localhost',
 ]
 
 ROOT_URLCONF = 'Kecomer.urls'
