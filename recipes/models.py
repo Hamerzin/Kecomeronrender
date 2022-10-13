@@ -37,7 +37,7 @@ class RecipesModel(models.Model):
     number_of_dishes=models.IntegerField()
     timeday= models.CharField(max_length=12,choices=time_choice, null=True, blank=True)
     recipes_time=models.IntegerField()
-    ingredients=models.ManyToManyField(Ingredients)
+    ingredients=models.ForeignKey(Ingredients, on_delete=models.CASCADE)
     like=models.IntegerField(default=0, null=True, blank=True)
     description=models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -11,7 +11,7 @@ class RecipesViewset(ModelViewSet):
     serializer_class=RecipesSerializer
     queryset=RecipesModel.objects.all()
 
-    permission_classes = [IsAuthenticated]
+
 
     @swagger_auto_schema(operation_summary="List Product", operation_description="This endpoint list a users")
     def list(self, request, *args, **kwargs):
@@ -30,7 +30,7 @@ class RecipesSearch(generics.ListAPIView):
     queryset = RecipesModel.objects.all()
     serializer_class = RecipesSerializer
 
-    permission_classes = [IsAuthenticated]
+ 
 
     @swagger_auto_schema(operation_summary="List user", operation_description="This endpoint list a users")
     def list(self, request, *args, **kwargs):
