@@ -22,7 +22,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = env('DEBUG')
 #config para render
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
 

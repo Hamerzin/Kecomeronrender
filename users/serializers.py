@@ -17,7 +17,7 @@ class UserCreationSerializer(serializers.ModelSerializer):
         user = User(
             email=self.validated_data['email'],
         )
-        password = self.validated_data['password'],
+        password = self.validated_data['password']
         password2 = self.validated_data['password2']
 
         if password != password2:
