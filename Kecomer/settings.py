@@ -73,8 +73,10 @@ MIDDLEWARE = [
 ]
 # permisoss para consumo de api
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3030',
+    'http://localhost:8080',
     'http://localhost',
+    'http://localhost:3000',
+    'http://localhost:3030',
 ]
 
 ROOT_URLCONF = 'Kecomer.urls'
@@ -129,7 +131,7 @@ WSGI_APPLICATION = 'Kecomer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = db.DBONRENDER
+DATABASES = db.SQLITE
 
 
 # Password validation

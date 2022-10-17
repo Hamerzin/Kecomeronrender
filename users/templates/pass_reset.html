@@ -1,0 +1,7 @@
+<p>Use the form below to change your password. Your password cannot be the same as your username.</p>
+<form role="form" method="post">
+  {% csrf_token %}
+  <input type="password" name="password" placeholder="New Password">
+  <input type="password" name="password_confirmation" placeholder="New Password">
+  <input type="submit">
+</form>

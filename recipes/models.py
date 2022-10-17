@@ -19,22 +19,19 @@ class Ingredients(models.Model):
 # Create your models here.
 class RecipesModel(models.Model):
     time_choice = [
-        ('B', 'Breakfast'),
-        ('L', 'Lunch'),
-        ('D', 'Dinner')
+        ('Breakfast', 'Breakfast'),
+        ('Lunch', 'Lunch'),
+        ('Dinner', 'Dinner')
     ]
-    category_choice=[
-        ('V','vegana'),
-        ('C', 'Carnes'),
-        ('P','Postres'),
-        ('S', 'SinTacc'),
-        ('PA', 'Pastas')
+    category_choice = [
+        ('VEGANA', 'Vegana'),
+        ('CARNE', 'Carne'),
+        ('POSTRE', 'Postre'),
     ]
     title=models.CharField(max_length=255, unique=True)
-    image=models.ImageField(upload_to="recipes/img", blank=True, null=True)
+    image=models.ImageField(upload_to="media/recipes/img", blank=True, null=True)
     link_video=models.CharField(max_length=255, blank=True, null=True)
     category=models.CharField(max_length=12, choices=category_choice)
-    number_of_dishes=models.IntegerField()
     timeday= models.CharField(max_length=12,choices=time_choice, null=True, blank=True)
     recipes_time=models.IntegerField()
     ingredients=models.ForeignKey(Ingredients, on_delete=models.CASCADE)
@@ -45,6 +42,7 @@ class RecipesModel(models.Model):
     
     def __str__(self):
         return self.title
+
     class Meta:
         verbose_name = 'Recipe'
         verbose_name_plural = 'Recipes'

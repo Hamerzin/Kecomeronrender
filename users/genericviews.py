@@ -9,7 +9,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 class ClientViewSet(ModelViewSet):
     queryset = User.objects.all()
-    serializer_class = UsersSerializers
+    #serializer_class = UsersSerializers
 
     permission_classes = [IsAuthenticated]
     @swagger_auto_schema(operation_summary="List user", operation_description="This endpoint list a users")

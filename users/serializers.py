@@ -24,16 +24,8 @@ class UserCreationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({'password': 'Passwords must match.'})
 
         user.set_password(password)
-        validate_password(password)
-        user.set_password(password)
         user.save()
         return user
-
-        
-
-    
-   
-        
 
 
 class UsersSerializers(serializers.ModelSerializer):
