@@ -1,4 +1,4 @@
-from recipes.models import RecipesModel, Ingredients, Favorites
+from recipes.models import RecipesModel, Ingredients, Favorites, QuantityModel, InstructionModel
 from django.contrib import admin
 
 
@@ -8,9 +8,9 @@ class RecipesAdmin(admin.ModelAdmin):
     list_display= ['id','title','category','timeday']
 
 
-@admin.register(Ingredients)
-class IngredientsAdmin(admin.ModelAdmin):
-    list_display= ['id','dishe_1','dishe_2','dishe_3','dishe_4']
+admin.site.register(Ingredients)
+admin.site.register(QuantityModel)
+admin.site.register(InstructionModel)
 
 @admin.register(Favorites)
 class FavoritesAdmin(admin.ModelAdmin):
